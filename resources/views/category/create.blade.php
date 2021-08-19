@@ -68,12 +68,6 @@
                                             <input type="file" name="category_image" id="category_image" >
                                             <label for="category_image"></label>
                                             <img id="preview_img" src="" class="" width="200" height="150"/>
-                                        
-                                 
-                                            {{-- <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" name="status" id="flexSwitchCheckChecked" checked>
-                                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                              </div> --}}
                                         </div>
                                     </div>
                                 </div>

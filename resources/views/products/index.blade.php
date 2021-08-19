@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <section class="jumbotron text-center">
-        <div class="category-page">
-            <a href="{{route('product.create')}}" class="btn btn-sucess"> Create New</a>
+        <div class="category-page float-right">
+            <a href="{{route('product.create')}}" class="btn btn-success"> Create New</a>
         </div>
         @php
             $products = \App\Models\Products::where('status','active')->select('id','name','price','discount_price','image')->get()->toArray();
-            // print_r($products);exit;    
         @endphp
         <div class="product-area most-popular section">
 			<div class="container">
@@ -37,19 +36,17 @@
                                 <span class="old"><del> {{$p_value['price']}}</del></span>
                                 <span>{{$p_value['discount_price']}}</span>
                             </div>
-                            {{-- <a href="{{url('category/edit/'.$s_value['id'])}}" class="btn-success"><i class="fa fa-pencil"></i></a> --}}
 
-                            <a href="{{url('product/edit/'.$p_value['id'])}}" class="btn-xs btn-success"><i class="fa fa-edit"></i></a>
+                            <a href="{{url('product/edit/'.$p_value['id'])}}" class=" btn btn-success"><i class="fa fa-edit"></i></a>
                             <a href="{{url('product_detail/'.$p_value['id'])}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                             <form action="{{ route('product.delete', ['id'=>$p_value['id']]) }}" method="POST" onsubmit="return confirm('Are you sure want to delete');" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="delete"> 
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="id" value="{{ $p_value['id'] }}">
-                                <button type="submit">
+                                <button type="submit" class="btn btn-danger"> 
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </form>
-                            {{-- <a href="{{url('product/edit/'.$p_value['id'])}}" class="btn btn-danger"><i class="fa fa-trash"></i></a> --}}
                         </div>
 
 

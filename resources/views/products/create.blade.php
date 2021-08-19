@@ -56,7 +56,6 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <input type="file" name="product_image[]" id="product_image" multiple>
-                                            {{-- <label for="category_image">Product Image</label> --}}
                                             <img id="preview_img" src="" class="" width="200" height="150"/>
                                         </div>
                                     </div>
@@ -90,9 +89,6 @@
                                         <div class="col-sm-6">
                                             <div class="">
                                                 <textarea class="ckeditor form-control" name="description"></textarea>
-
-                                                {{-- <textarea name="description" id="description" cols="30" rows="10" class="ckeditor"></textarea> --}}
-                                                {{-- <input type="textarea" name="description" id="description" class="ckeditor"> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +116,6 @@
                                             <div class="">
                                                 <input type="file" name="video" accept="video/mp4,video/x-m4v,video/*">
                                                 <video src=""></video>
-                                                {{-- <textarea class="ckeditor form-control" name="detailed_description"></textarea> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -155,28 +150,6 @@
     <script>
         $(function () {
             $('.ckeditor').ckeditor({fullPage:true});
-    //         CKEDITOR.replace('description', {
-    //   fullPage: true,
-    //   extraPlugins: 'docprops',
-    //   allowedContent: true,
-    //   height: 320
-    // });
-
-
-    //         $(document).ready(()=>{
-    //   $('#photo').change(function(){
-    //     const file = this.files[0];
-    //     console.log(file);
-    //     if (file){
-    //       let reader = new FileReader();
-    //       reader.onload = function(event){
-    //         console.log(event.target.result);
-    //         $('#imgPreview').attr('src', event.target.result);
-    //       }
-    //       reader.readAsDataURL(file);
-    //     }
-    //   });
-    // });
             $("#product_image").on("change",function () {
                var file = this.files[0];
                if (file){

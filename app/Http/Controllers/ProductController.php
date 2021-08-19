@@ -36,7 +36,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // print_r($request->all());exit;
         $product_image = $request->product_image;
         foreach($product_image as $key => $value){
             $imageName = time().rand(3,5).'.'.$value->extension();  
@@ -104,7 +103,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Products $product)
     {
-        // print_r($request->all());exit;
         $product_image = $request->product_image;
         $primary_image = $request->primary_image;
         $pro_img = [];

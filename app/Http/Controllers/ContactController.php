@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Mail\EmailDemo;
-// use Mail;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -28,7 +27,6 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        // print_r($request->all());exit;
         $email = $request->email;
         $message = $request->message;
         $subject = $request->subject;
@@ -41,12 +39,7 @@ class ContactController extends Controller
             'status'=>"active",
         ]);
 
-        $data = array('name'=>"Chandani");
-        // print_r($email);exit;
-
-        // $subject = 
         $email = $request->email;
-   
         $mailData = [
             'title' => $request->title,
             'body' => $request->message
@@ -56,14 +49,4 @@ class ContactController extends Controller
    
         return redirect('contact/index');
     }
-    //   Mail::send([],$data, function($message) use($request,$data) {
-    //      $message->to($request->email, $request->message)->subject
-    //         ($request->subject);
-    //      $message->from(env('MAIL_USERNAME'),'chandani');
-    //      $message->attachData($request->message, $request->name);
-    //   });
-        // return redirect('contact/index');
-    // }
-
-    
 }

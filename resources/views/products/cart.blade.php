@@ -10,7 +10,6 @@
                         <input type="hidden" name="id" id="product_id">
                     </div>
                     @php
-                        // $id = "<script>$('#product_modal').attr('data-id');</script>";
                         $product_image = explode(",",$product->image);
                     @endphp
                     <div class="modal-body">
@@ -98,13 +97,10 @@
                                             <input type="hidden" name="id" value="{{ $product->id}}">
 
                                         </form>
-                                        {{-- <a href="{{route('product.checkout')}}" class="btn">Add to cart</a> --}}
                                         @php
                                             $add_to_favorite = \App\Models\AddtoFavorite::where('product_id',$product->id)->where('add_to_favourite','y')->first();   
                                         @endphp
                                         <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);" class="btn min {{!empty($add_to_favorite)?"":"active"}}"> <i class="fa fa-heart add_to_favourite" ><input type="hidden" name="id" class="product-id" value="{{$product->id}}"></i></a>
-
-                                        {{-- <a href="javascript:void(0);" class="btn min"><i class="fa fa-heart"></i></a> --}}
                                         <a href="#" class="btn min"><i class="fa fa-compress"></i></a>
                                     </div>
                                     <div class="default-social">
@@ -128,7 +124,6 @@
         $(function () {
             $("#exampleModal").modal("show"); 
             $(".add_to_favourite").on("click",function(){
-                alert("askdjkas");
                 var id = $(".product-id").val();
                 console.log(id);
                 $.ajax({

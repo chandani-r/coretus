@@ -82,7 +82,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        // print_r($request->category_image->getClientOriginalExtension());exit;
         if($request->category_image != null){
             $imageName = time().'.'.$request->category_image->extension();  
             $request->category_image->move(public_path('img'), $imageName);
@@ -102,7 +101,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category, Request $request)
     {
-        // print_r($request->all());
         $category_detail = Category::where('id',$request->id)->first();
         $image_path = public_path('img/'.$category_detail->image); 
         if(file_exists($image_path)) {

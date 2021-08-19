@@ -77,16 +77,13 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <input type="file" name="primary_image" id="primary_image" multiple>
-                                            {{-- <label for="category_image">Product Image</label> --}}
                                             @php
                                                 
                                             $primary_image = $product->primary_image;
                                             @endphp
                                             <div class="img-preview">
                                                 @if(!empty($primary_image))
-                                                    {{-- @foreach ($primary_image as $prim_key => $prim_value) --}}
                                                         <img id="preview_primary_img" src="{{asset('img/product/primary_image/'.$primary_image)}}" class=""/>
-                                                    {{-- @endforeach --}}
                                                 @endif
                                                 </div>
                                             
@@ -125,9 +122,6 @@
                                         <div class="col-sm-6">
                                             <div class="">
                                                 <textarea class="ckeditor form-control" name="description">{!! $product->description !!}</textarea>
-
-                                                {{-- <textarea name="description" id="description" cols="30" rows="10" class="ckeditor"></textarea> --}}
-                                                {{-- <input type="textarea" name="description" id="description" class="ckeditor"> --}}
                                             </div>
                                         </div>
                                     </div>

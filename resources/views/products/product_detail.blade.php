@@ -3,8 +3,7 @@
 <section id="services" class="services section-bg">
     <div class="container-fluid">
         @php
-        $product_image = explode(",",$product->image);
-            // print_r($product);exit;
+            $product_image = explode(",",$product->image);
         @endphp
        <div class="row row-sm">
           <div class="col-md-6 _boxzoom">
@@ -47,15 +46,6 @@
                       <div class="_p-qty-and-cart">
                          <div class="_p-add-cart">
                              <a href="{{url('product/add_to_cart/'.$product['id'])}}" class="btn-theme btn buy-btn" tabindex="0">  <i class="fa fa-shopping-cart"></i> Buy Now</a>
-                            {{-- <button >
-                            <i class="fa fa-shopping-cart"></i> Buy Now
-                            </button> --}}
-                            <button class="btn-theme btn btn-success" tabindex="0">
-                            <i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                            <input type="hidden" name="pid" value="18" />
-                            <input type="hidden" name="price" value="850" />
-                            <input type="hidden" name="url" value="" />    
                          </div>
                       </div>
                    </form>
@@ -78,8 +68,6 @@
                         ->orwhere('price','=<',$product['discount_price'])
                         ->where('cat_id',$product['cat_id'])
                         ->get()->toArray();
-            // print_r($recent_product);exit;
-            // ->where('price','>', $product['discount_price'])->orwhere('price','<',$product['discount_price'])->orwhere('cat_id',$product['cat_id'])
        @endphp
        <div class="row">
           <div class="col-md-12 list-slider mt-4">
@@ -89,7 +77,6 @@
                         <div class="sq_box shadow">
                         <div class="pdis_img"> 
                             <span class="wishlist">
-                                {{-- <input type="hidden" name="id" class="product-id" value="{{$r_value['id']}}"> --}}
                                 <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);" class="add-to-favorite"> <i class="fa fa-heart add_to_favourite" ><input type="hidden" name="id" class="product-id" value="{{$r_value['id']}}"></i></a>
                             </span>
                             <a href="#">
@@ -214,7 +201,6 @@ $(document).ready(function () {
 
     $(function() {
         $(".add_to_favourite").on("click",function(){
-            alert("askdjkas");
             var id = $(".product-id").val();
             console.log(id);
             $.ajax({

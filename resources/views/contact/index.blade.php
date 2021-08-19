@@ -70,13 +70,6 @@
                                         <li><a href="mailto:info@yourwebsite.com">support@yourwebsite.com</a></li>
                                     </ul>
                                 </div>
-                                <div class="single-info">
-                                    <i class="fa fa-location-arrow"></i>
-                                    <h4 class="title">Our Address:</h4>
-                                    <ul>
-                                        <li>KA-62/1, Travel Agency, 45 Grand Central Terminal, New York.</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>

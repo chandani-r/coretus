@@ -72,22 +72,12 @@
                                             <label for="category_image"></label>
                                             <input type="hidden" name="cateory_image" value="{{$category->image}}">
                                             <img id="preview_img" src="{{asset('img/'.$category->image)}}" class="" width="200" height="150"/>
-                                        
-                                
-                                            {{-- <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" name="status" id="flexSwitchCheckChecked" checked>
-                                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
                                 <input type="hidden" name="id" value="{{$category->id}}">
-                                {{-- <input type="hidden" name="updated_at" value="{{now();}}"> --}}
                                 <input type="submit" value="Submit" class="btn btn-sucess" style="align-content: center">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            
                         </div>
                 {!! Form::close()!!}
             </div>
