@@ -88,3 +88,7 @@ Route::get('/product/add_to_cart/{id}', [App\Http\Controllers\ProductController:
 Route::get('/product/check_out', [App\Http\Controllers\ProductController::class, 'checkout'])->name('product.checkout');
 Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'product_detail'])->name('product.product_detail');
 Route::post('/product/wishlist', [App\Http\Controllers\ProductController::class, 'wishlist'])->name('product.wishlist');
+
+
+Route::get('/contact/index', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');

@@ -162,7 +162,7 @@
                         <div class="col-lg-2 col-md-2 col-12">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('images/coretus.png')}}" alt="logo"></a>
+                                <a href="{{url('/')}}"><img src="{{asset('images/coretus.png')}}" alt="logo"></a>
                             </div>
                             <!--/ End Logo -->
                             <!-- Search Form -->
@@ -186,14 +186,6 @@
                                     @php
                                         $categories = \App\Models\Category::where('status','active')->get()->toArray();   
                                     @endphp
-                                        {{-- <div class="col-md-4">
-                                            <select class="form-control" value="{{request('cat_id')}}">
-                                                <option selected="selected">All Category</option>
-                                                @foreach ($categories as $key => $value)
-                                                    <option value="{{$value['id']}}">{{$value['name']}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div> --}}
                                             <form action="{{ url('/') }}" method="get" >
                                                 <input name="search" placeholder="Search Products Here....." type="search" value="{{request('search')}}">
                                                 <button class="btnn"><i class="ti-search"></i></button>
@@ -204,7 +196,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-12">
+                        {{-- <div class="col-lg-2 col-md-3 col-12">
                             <div class="right-bar">
                                 <!-- Search Form -->
                                 <div class="sinlge-bar">
@@ -246,7 +238,7 @@
                                     <!--/ End Shopping Item -->
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -287,14 +279,14 @@
                                                 <ul class="nav main-menu menu navbar-nav">
                                                         <li class="active"><a href="{{url('/')}}">Home</a></li>
                                                         <li><a href="{{route('product.index')}}">Product</a></li>												
-                                                        <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
+                                                        {{-- <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
                                                             <ul class="dropdown">
                                                                 <li><a href="shop-grid.html">Shop Grid</a></li>
                                                                 <li><a href="cart.html">Cart</a></li>
                                                                 <li><a href="checkout.html">Checkout</a></li>
                                                             </ul>
-                                                        </li>
-                                                        <li><a href="contact.html">Contact Us</a></li>
+                                                        </li> --}}
+                                                        <li><a href="{{route('contact.index')}}">Contact Us</a></li>
                                                     </ul>
                                             </div>
                                         </div>
@@ -309,14 +301,10 @@
             <!--/ End Header Inner -->
         </header>
 	<!--/ End Header -->
-        
-
         <main class="py-4">
             @include('flash-messages')
             @yield('content')
-
-
-        </main>
+            </main>
 
         	<!-- Start Footer Area -->
 	<footer class="footer">
